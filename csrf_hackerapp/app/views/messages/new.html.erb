@@ -1,0 +1,9 @@
+<%= form_tag('http://localhost:3030/messages') do |f| %>
+  <%= label_tag 'title' %>
+  <%= text_field_tag 'message[title]' %>
+  <br />
+  <%= label_tag 'body' %>
+  <%= text_field_tag 'message[title]' %>
+
+  <%= submit_tag %>
+<% end %>
