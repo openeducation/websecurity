@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Testimonies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Testimony text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @testimonies.each do |testimony| %>
+      <tr>
+        <td><%= testimony.name %></td>
+        <td><%= testimony.testimony_text.html_safe %></td>
+        <td><%= link_to 'Show', testimony %></td>
+        <td><%= link_to 'Edit', edit_testimony_path(testimony) %></td>
+        <td><%= link_to 'Destroy', testimony, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Testimony', new_testimony_path %>
